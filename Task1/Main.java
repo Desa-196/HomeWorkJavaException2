@@ -3,8 +3,27 @@
  * вместо этого, необходимо повторно запросить у пользователя ввод данных.
  */
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        
+        System.out.printf("Введенное число: %.2f", readIntFromConsole());
+    }
+
+    // Функция ввода числа с проверкой
+    public static float readIntFromConsole() {
+        System.out.print("Введите число: ");
+        try (Scanner input = new Scanner(System.in)) {
+            while (true) {
+                try {
+                    return input.nextFloat();
+                } catch (InputMismatchException  e) {
+                    System.out.println("Ошибка ввода, повторите ввод: ");
+                    input.next();
+                    continue;
+                }
+            }
+        }
     }
 }
