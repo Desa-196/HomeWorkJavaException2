@@ -5,7 +5,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-       System.out.println(readFromConsole());
+        try{
+            System.out.println(readFromConsole());
+        }
+        catch(RaedEmptyStringException e){
+            System.out.println("Пустые строки вводить нельзя!");
+        }
     }
 
     public static String readFromConsole() throws RaedEmptyStringException {
