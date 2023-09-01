@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Введенное число: %.2f", readIntFromConsole());
+        System.out.printf("Введенное число: %.2f", readFloatFromConsole());
     }
 
     // Функция ввода числа с проверкой
-    public static float readIntFromConsole() {
+    public static float readFloatFromConsole() {
         System.out.print("Введите число: ");
         try (Scanner input = new Scanner(System.in)) {
             while (true) {
